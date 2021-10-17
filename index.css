@@ -1,0 +1,232 @@
+html,body{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  background: #080357;
+}
+
+*{
+  box-sizing: border-box;
+  color:white;
+}
+
+body{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  width: 100vw;
+  grid-template-areas: 'header' 'main' 'footer';
+}
+
+header{
+  grid-area: header;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #080357;
+}
+
+.menu,.close{
+  display: none;
+}
+
+.navbar{
+  display: grid;
+  grid-column: 2;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.navbar a{
+  padding: 1em;
+  font-size: large;
+  text-decoration: none;
+  color: #e4376a;
+  font-family: 'Old Standard TT', serif;
+}
+
+main{
+  grid-area: main;
+  overflow-y: auto;
+}
+
+.intro{
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+}
+
+.intro q{
+  font-family: 'Scheherazade New', serif;
+  font-size: 1.5em;
+}
+
+.hello{
+  padding:3em 10em;
+}
+
+.hello h1{
+  color: white;
+}
+
+.social{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.social ul{
+  display: grid;
+  grid-column: 2;
+  grid-template-columns: repeat(4,1fr);
+  justify-items: center;
+}
+
+.social ul li{
+  transform: scale(2);
+}
+
+.about{
+  display: grid;
+  background: #080357;
+  padding: 7em;
+}
+
+.about table{
+  font-size: 1.5em;
+  width: 40%;
+}
+
+.about table td{
+  padding: 1em;
+  width: 50%;
+}
+
+.cv{
+  width: 12em;
+  margin: 1em auto;
+  background: #080357;
+  border-radius: 5px;
+  color: cornflowerblue;
+  padding: 1em;
+  border: 1px solid darkturquoise;
+  cursor: pointer;
+}
+
+.education{
+  display: grid;
+  padding: 7em;
+}
+
+.education ul{
+  font-size: 1.5em;
+}
+
+.education ul li{
+  padding: 2em;
+}
+
+.education ul li:before{
+  content: "\f19d";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+.contact{
+  display: grid;
+  padding: 7em;
+  background: #080357;
+}
+
+.contact ul li{
+  padding: 1em;
+  font-size: 1.5em;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}
+
+li{
+  padding: 1em;
+}
+
+footer{
+  grid-area: footer;
+  display: grid;
+  justify-content: center;
+  padding: 1em;
+  background: #080357;
+  font-size: small;
+}
+
+h1{
+  color: #e4376a;
+}
+
+.blue{
+  color: blue;
+}
+
+.hotpink{
+  color: hotpink;
+}
+
+@media screen and (max-width: 1200px) {
+  .hello{
+    padding: 1em;
+  }
+  .about,.education,.contact{
+    padding: 1em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .photo{
+    display: none;
+  }
+  .about,.education,.contact{
+    padding: 1em;
+  }
+  .intro{
+    grid-template-columns: 1fr;
+  }
+  footer,.navbar{
+    display: none;
+  }
+  q{
+    line-height: 1.4em;
+  }
+  .social ul li{
+    transform: scale(1);
+  }
+  .education ul li {
+    padding: 1.5em;
+  }
+  .navbar{
+    display: none;
+    padding: 5em;
+    grid-column: 2;
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    background: #080357;
+    grid-template-columns: 1fr;
+    width: 90vw;
+    z-index: 2;
+  }
+  .close{
+    color: #e4376a;
+    position: fixed;
+    right: 3em;
+    top: 1em;
+    z-index: 2;
+  }
+  .menu{
+    display: block;
+    position: fixed;
+    right: 1em;
+    top: 1em;
+  }
+}
