@@ -184,7 +184,19 @@ h1{
 
 @media screen and (max-width: 600px) {
   .photo{
-    display: none;
+    grid-row: 1;
+    grid-column: 1;
+    z-index: 1;
+    transform: scale(0.75) translate(100px, -6em);
+    z-index: 0;
+  }
+  .photo img{
+    width:90%;
+  }
+  .hello{
+    grid-row: 1;
+    grid-column: 1;
+    z-index: 1;
   }
   .about,.education,.contact{
     padding: 1em;
@@ -228,5 +240,6 @@ h1{
     position: fixed;
     right: 1em;
     top: 1em;
+    z-index: 2;
   }
 }
